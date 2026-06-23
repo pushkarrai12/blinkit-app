@@ -1,0 +1,76 @@
+<div class="checkout-page">
+
+  <div class="checkout-container">
+
+    <div class="checkout-form">
+
+      <h1>Checkout</h1>
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        [(ngModel)]="name"
+      >
+
+      <input
+        type="text"
+        placeholder="Mobile Number"
+        [(ngModel)]="mobile"
+      >
+
+      <textarea
+        rows="5"
+        placeholder="Delivery Address"
+        [(ngModel)]="address"
+      ></textarea>
+
+      <button (click)="placeOrder()">
+        Place Order
+      </button>
+
+    </div>
+
+    <div class="order-summary">
+
+      <h2>Order Summary</h2>
+
+      <div
+        class="summary-item"
+        *ngFor="let item of cartItems"
+      >
+        <img [src]="item.image">
+
+        <div>
+          <h4>{{ item.name }}</h4>
+          <p>Qty: {{ item.qty || 1 }}</p>
+        </div>
+
+        <strong>
+          ₹{{ item.price * (item.qty || 1) }}
+        </strong>
+      </div>
+
+      <div class="bill">
+
+        <div>
+          <span>Item Total</span>
+          <b>₹{{ getTotal() }}</b>
+        </div>
+
+        <div>
+          <span>Delivery Charge</span>
+          <b>₹20</b>
+        </div>
+
+        <div class="grand-total">
+          <span>Grand Total</span>
+          <b>₹{{ getTotal() + 20 }}</b>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

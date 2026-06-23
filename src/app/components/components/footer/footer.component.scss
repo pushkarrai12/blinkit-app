@@ -1,0 +1,43 @@
+.footer {
+  background: #0aad0a;
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.footer h3,
+.footer h5 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffd700;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+hr {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 15px;
+}

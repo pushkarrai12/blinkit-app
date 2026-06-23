@@ -1,0 +1,64 @@
+<div class="delivery-page">
+
+  <div class="hero">
+    <h1>Delivery Partner Dashboard 🚚</h1>
+    <p>Welcome, {{ riderName }}</p>
+  </div>
+
+  <div class="stats">
+
+    <div class="stat-card">
+      <h3>Total Earnings</h3>
+      <p>₹{{ totalEarning }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Completed Orders</h3>
+      <p>{{ completedOrders }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Active Orders</h3>
+      <p>{{ orders.length }}</p>
+    </div>
+
+  </div>
+
+  <h2>Assigned Orders</h2>
+
+  <div class="order-card" *ngFor="let order of orders; let i = index">
+
+    <div class="order-top">
+      <div>
+        <h3>Order #{{ order.id }}</h3>
+        <p><b>Customer:</b> {{ order.customer }}</p>
+        <p><b>Address:</b> {{ order.address }}</p>
+        <p><b>Amount:</b> ₹{{ order.amount }}</p>
+      </div>
+
+      <div class="status">
+        {{ order.status }}
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="accept" (click)="updateStatus(order, 'Accepted')">
+        Accept
+      </button>
+
+      <button class="pickup" (click)="updateStatus(order, 'Picked Up')">
+        Picked Up
+      </button>
+
+      <button class="deliver" (click)="updateStatus(order, 'Delivered')">
+        Delivered
+      </button>
+
+      <button class="reject" (click)="rejectOrder(i)">
+        Reject
+      </button>
+    </div>
+
+  </div>
+
+</div>

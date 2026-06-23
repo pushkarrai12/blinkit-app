@@ -1,0 +1,26 @@
+<div class="reports-page">
+
+  <div class="reports-header">
+    <h1>Reports 📋</h1>
+    <p>View and download platform reports.</p>
+  </div>
+
+  <div class="reports-grid">
+
+    <div class="report-card" *ngFor="let report of reports">
+
+      <h2>{{ report.title }}</h2>
+
+      <p class="value">{{ report.value }}</p>
+
+      <p class="date">{{ report.date }}</p>
+
+      <button (click)="downloadReport(report)">
+        Download
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

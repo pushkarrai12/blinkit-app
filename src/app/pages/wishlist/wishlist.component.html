@@ -1,0 +1,36 @@
+<div class="wishlist-page">
+
+  <div class="wishlist-header">
+    <h1>My Wishlist ❤️</h1>
+    <p>Your saved favorite products.</p>
+  </div>
+
+  <div class="wishlist-grid">
+
+    <div class="wish-card" *ngFor="let item of items; let i = index">
+
+      <img [src]="item.image" [alt]="item.name">
+
+      <h3>{{ item.name }}</h3>
+
+      <p>{{ item.category }}</p>
+
+      <div class="price">
+        ₹{{ item.price }}
+      </div>
+
+      <div class="buttons">
+        <button class="add-btn" (click)="addToCart(item)">
+          Add
+        </button>
+
+        <button class="remove-btn" (click)="removeItem(i)">
+          Remove
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

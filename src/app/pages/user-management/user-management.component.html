@@ -1,0 +1,43 @@
+<div class="user-page">
+
+  <div class="user-header">
+    <h1>User Management 👥</h1>
+    <p>Manage customers, sellers and delivery partners.</p>
+  </div>
+
+  <div class="user-table">
+
+    <div class="table-head">
+      <span>Name</span>
+      <span>Email</span>
+      <span>Role</span>
+      <span>Status</span>
+      <span>Action</span>
+    </div>
+
+    <div class="table-row" *ngFor="let user of users; let i = index">
+      <span>{{ user.name }}</span>
+      <span>{{ user.email }}</span>
+      <span>{{ user.role }}</span>
+
+      <span
+        class="status"
+        [class.blocked]="user.status === 'Blocked'"
+      >
+        {{ user.status }}
+      </span>
+
+      <span class="actions">
+        <button (click)="toggleStatus(user)">
+          {{ user.status === 'Active' ? 'Block' : 'Unblock' }}
+        </button>
+
+        <button class="delete" (click)="deleteUser(i)">
+          Delete
+        </button>
+      </span>
+    </div>
+
+  </div>
+
+</div>

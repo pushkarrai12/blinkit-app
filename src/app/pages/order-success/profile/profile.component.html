@@ -1,0 +1,51 @@
+<div class="profile-page">
+
+  <div class="profile-card">
+
+    <div class="profile-top">
+
+      <div class="profile-avatar">
+        {{ user?.name?.charAt(0) || 'U' }}
+      </div>
+
+      <div class="profile-info">
+
+        <h2>{{ user?.name || 'Guest User' }}</h2>
+
+        <p>{{ user?.email }}</p>
+
+        <p>{{ user?.mobile }}</p>
+
+      </div>
+
+    </div>
+
+    <div class="profile-section">
+
+      <h3>Recent Orders</h3>
+
+      <div
+        class="order-card"
+        *ngFor="let order of orders"
+      >
+
+        <p><b>Order ID:</b> #{{ order.id }}</p>
+
+        <p><b>Items:</b> {{ order.items }}</p>
+
+        <p><b>Total:</b> ₹{{ order.total }}</p>
+
+      </div>
+
+    </div>
+
+    <button
+      class="logout-btn"
+      (click)="logout()"
+    >
+      Logout
+    </button>
+
+  </div>
+
+</div>

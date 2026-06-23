@@ -1,0 +1,59 @@
+<div class="wallet-page">
+
+  <div class="wallet-card">
+
+    <h1>My Wallet 💳</h1>
+
+    <div class="balance-box">
+      ₹{{ balance }}
+    </div>
+
+    <form
+      [formGroup]="walletForm"
+      (ngSubmit)="addMoney()"
+    >
+
+      <input
+        type="number"
+        placeholder="Enter Amount"
+        formControlName="amount"
+      >
+
+      <div
+        class="error"
+        *ngIf="
+          walletForm.get('amount')?.invalid &&
+          walletForm.get('amount')?.touched
+        "
+      >
+        Enter valid amount
+      </div>
+
+      <button type="submit">
+        Add Money
+      </button>
+
+    </form>
+
+    <div class="history">
+
+      <h2>Transactions</h2>
+
+      <div
+        class="transaction"
+        *ngFor="let item of transactions"
+      >
+
+        <span>{{ item.type }}</span>
+
+        <strong>
+          ₹{{ item.amount }}
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

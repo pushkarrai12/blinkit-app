@@ -1,0 +1,87 @@
+.earnings-page {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.earnings-header {
+  background: linear-gradient(135deg, #111827, #0aad0a);
+  color: white;
+  padding: 40px;
+  border-radius: 28px;
+  margin-bottom: 30px;
+
+  h1 {
+    margin: 0;
+    font-size: 42px;
+  }
+
+  p {
+    color: #e5e7eb;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  h3 {
+    margin: 0 0 12px;
+    color: #555;
+  }
+
+  p {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 900;
+    color: #0aad0a;
+  }
+}
+
+.earning-table {
+  background: white;
+  padding: 25px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.table-head,
+.table-row {
+  min-width: 900px;
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  align-items: center;
+  padding: 16px;
+}
+
+.table-head {
+  background: #f1f5f9;
+  border-radius: 14px;
+  font-weight: 900;
+}
+
+.table-row {
+  border-bottom: 1px solid #eee;
+}
+
+@media(max-width: 900px) {
+  .earnings-page {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,36 @@
+<div class="orders-page">
+
+  <div class="orders-header">
+    <h1>My Orders 📦</h1>
+    <p>Check your recent and past orders.</p>
+  </div>
+
+  <div class="order-card" *ngFor="let order of orders">
+
+    <div class="order-top">
+      <div>
+        <h2>Order #{{ order.id }}</h2>
+        <p>Date: {{ order.date }}</p>
+      </div>
+
+      <div class="status">
+        {{ order.status }}
+      </div>
+    </div>
+
+    <div class="items">
+      <div class="item" *ngFor="let item of order.items">
+        <span>{{ item.name }} × {{ item.qty || 1 }}</span>
+        <b>₹{{ item.price * (item.qty || 1) }}</b>
+      </div>
+    </div>
+
+    <h3>Total: ₹{{ order.total }}</h3>
+
+    <button class="track-btn" routerLink="/delivery-tracking">
+      Track Order
+    </button>
+
+  </div>
+
+</div>

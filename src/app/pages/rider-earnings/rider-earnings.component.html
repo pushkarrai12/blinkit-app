@@ -1,0 +1,56 @@
+<div class="earnings-page">
+
+  <div class="earnings-header">
+    <h1>Rider Earnings 💰</h1>
+    <p>Track your delivery income and bonuses.</p>
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>Total Earnings</h3>
+      <p>₹{{ getTotalEarnings() }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Orders</h3>
+      <p>{{ getTotalOrders() }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Today Bonus</h3>
+      <p>₹30</p>
+    </div>
+
+  </div>
+
+  <div class="earning-table">
+
+    <div class="table-head">
+      <span>Order ID</span>
+      <span>Date</span>
+      <span>Distance</span>
+      <span>Amount</span>
+      <span>Bonus</span>
+      <span>Total</span>
+    </div>
+
+    <div class="table-row" *ngFor="let item of earnings">
+
+      <span>#{{ item.orderId }}</span>
+
+      <span>{{ item.date }}</span>
+
+      <span>{{ item.distance }}</span>
+
+      <span>₹{{ item.amount }}</span>
+
+      <span>₹{{ item.bonus }}</span>
+
+      <span>₹{{ item.amount + item.bonus }}</span>
+
+    </div>
+
+  </div>
+
+</div>

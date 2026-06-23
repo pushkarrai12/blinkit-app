@@ -1,0 +1,31 @@
+
+<div class="availability-page">
+
+  <div class="availability-card">
+
+    <div
+      class="status-circle"
+      [class.online]="isOnline"
+    >
+      {{ isOnline ? 'Online' : 'Offline' }}
+    </div>
+
+    <h1>Rider Availability 🟢</h1>
+
+    <p>
+      {{ isOnline
+        ? 'You are available for new delivery orders.'
+        : 'You are offline. Go online to receive orders.'
+      }}
+    </p>
+
+    <button
+      [class.offline-btn]="isOnline"
+      (click)="toggleStatus()"
+    >
+      {{ isOnline ? 'Go Offline' : 'Go Online' }}
+    </button>
+
+  </div>
+
+</div>

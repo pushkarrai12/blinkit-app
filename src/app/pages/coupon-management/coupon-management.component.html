@@ -1,0 +1,93 @@
+<div class="coupon-page">
+
+  <div class="coupon-card">
+
+    <h1>Coupon Management 🎟️</h1>
+
+    <form
+      [formGroup]="couponForm"
+      (ngSubmit)="addCoupon()"
+    >
+
+      <input
+        type="text"
+        placeholder="Coupon Code"
+        formControlName="code"
+      >
+
+      <div
+        class="error"
+        *ngIf="
+          couponForm.get('code')?.invalid &&
+          couponForm.get('code')?.touched
+        "
+      >
+        Coupon code required
+      </div>
+
+      <input
+        type="number"
+        placeholder="Discount Amount"
+        formControlName="discount"
+      >
+
+      <div
+        class="error"
+        *ngIf="
+          couponForm.get('discount')?.invalid &&
+          couponForm.get('discount')?.touched
+        "
+      >
+        Enter valid discount
+      </div>
+
+      <input
+        type="number"
+        placeholder="Minimum Order"
+        formControlName="minOrder"
+      >
+
+      <div
+        class="error"
+        *ngIf="
+          couponForm.get('minOrder')?.invalid &&
+          couponForm.get('minOrder')?.touched
+        "
+      >
+        Enter valid minimum order
+      </div>
+
+      <button type="submit">
+        Add Coupon
+      </button>
+
+    </form>
+
+    <div class="coupon-list">
+
+      <div
+        class="coupon-item"
+        *ngFor="let item of coupons; let i = index"
+      >
+
+        <div>
+          <h3>{{ item.code }}</h3>
+          <p>
+            ₹{{ item.discount }} OFF on orders above ₹{{ item.minOrder }}
+          </p>
+        </div>
+
+        <button
+          class="delete-btn"
+          (click)="deleteCoupon(i)"
+        >
+          Delete
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

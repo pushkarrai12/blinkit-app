@@ -1,0 +1,71 @@
+<div class="admin-page">
+
+  <aside class="sidebar">
+    <h2>QuickMart Admin</h2>
+
+    <ul>
+      <li routerLink="/admin">🏠 Dashboard</li>
+      <li routerLink="/seller-dashboard">📦 Seller Dashboard</li>
+      <li routerLink="/seller-orders">🛒 Seller Orders</li>
+      <li routerLink="/reports">📊 Reports</li>
+      <li routerLink="/user-management">👥 User Management</li>
+      <li routerLink="/rider-earnings">💰 Rider Earnings</li>
+      <li routerLink="/wallet">
+  💳 Wallet
+</li>
+      <li routerLink="/settings">⚙ Settings</li>
+      <li (click)="logout()" class="logout-item">
+    🚪 Logout
+  </li>
+    </ul>
+  </aside>
+
+  <main class="admin-content">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>Total Products</h3>
+        <p>{{ products.length }}</p>
+      </div>
+
+      <div class="card">
+        <h3>Total Orders</h3>
+        <p>{{ totalOrders }}</p>
+      </div>
+    </div>
+
+    <div class="admin-grid">
+
+      <div class="add-product">
+        <h2>Add Product</h2>
+
+        <input type="text" placeholder="Product Name" [(ngModel)]="product.name">
+        <input type="text" placeholder="Price" [(ngModel)]="product.price">
+        <input type="text" placeholder="Category" [(ngModel)]="product.category">
+        <input type="text" placeholder="Image URL" [(ngModel)]="product.image">
+
+        <button (click)="addProduct()">Add Product</button>
+      </div>
+
+      <div class="product-list">
+        <h2>Product List</h2>
+
+        <div class="product-card" *ngFor="let item of products; let i = index">
+          <img [src]="item.image">
+
+          <div>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.category }}</p>
+            <strong>₹{{ item.price }}</strong>
+          </div>
+
+          <button (click)="deleteProduct(i)">Delete</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+

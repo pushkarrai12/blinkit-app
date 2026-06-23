@@ -1,0 +1,50 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <h1>Welcome Back 👋</h1>
+
+    <p>Login to your QuickMart account</p>
+
+    <input
+      type="email"
+      placeholder="Enter Email"
+      [(ngModel)]="email"
+    >
+
+    <div class="password-box">
+
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Enter Password"
+        [(ngModel)]="password"
+      >
+
+      <button (click)="togglePassword()">
+        {{ showPassword ? 'Hide' : 'Show' }}
+      </button>
+
+    </div>
+
+    <button
+      class="login-btn-main"
+      (click)="login()"
+    >
+       Login
+    </button>
+
+    <div class="social-login">
+      <button type="button">Google</button>
+      <button type="button">Facebook</button>
+    </div>
+
+    <div class="register-link">
+      Don't have an account?
+      <a routerLink="/register">Create Account</a>
+    </div>
+
+  </div>
+
+</div>
+    
+  

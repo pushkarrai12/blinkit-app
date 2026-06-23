@@ -1,0 +1,29 @@
+
+<div class="offers-page">
+
+  <div class="offers-header">
+    <h1>Best Offers For You 🎁</h1>
+    <p>Use coupons and save more on groceries.</p>
+  </div>
+
+  <div class="offers-grid">
+
+    <div class="offer-card" *ngFor="let offer of offers">
+
+      <h2>{{ offer.title }}</h2>
+
+      <p>{{ offer.desc }}</p>
+
+      <div class="coupon">
+        {{ offer.code }}
+      </div>
+
+      <button (click)="applyOffer(offer.code)">
+        Apply Coupon
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

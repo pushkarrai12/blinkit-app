@@ -1,0 +1,60 @@
+<div class="register-page">
+
+  <div class="register-card">
+
+    <h1>Create Account 🚀</h1>
+
+    <p>Register to continue shopping</p>
+
+    <input
+  type="text"
+  placeholder="Full Name"
+  name="name"
+  [(ngModel)]="name"
+/>
+
+<input
+  type="email"
+  placeholder="Email"
+  name="email"
+  [(ngModel)]="email"
+/>
+
+<input
+  type="text"
+  placeholder="Mobile"
+  name="mobile"
+  [(ngModel)]="mobile"
+/>
+
+<div class="password-box">
+  <input
+    [type]="showPassword ? 'text' : 'password'"
+    placeholder="Password"
+    name="password"
+    [(ngModel)]="password"
+  />
+</div>
+
+<input
+  type="password"
+  placeholder="Confirm Password"
+  name="confirmPassword"
+  [(ngModel)]="confirmPassword"
+/>
+
+    <button
+      class="register-btn"
+      (click)="register()"
+    >
+      Register
+    </button>
+
+    <div class="login-link">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </div>
+
+  </div>
+
+</div>

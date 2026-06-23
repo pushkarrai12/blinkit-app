@@ -1,0 +1,42 @@
+<div class="settings-page">
+  <div class="settings-card">
+
+    <h1>Settings ⚙️</h1>
+    <p>Manage your app preferences.</p>
+
+    <div class="setting-row">
+      <div>
+        <h3>Notifications</h3>
+        <p>{{ notifications ? 'Enabled' : 'Disabled' }}</p>
+      </div>
+      <button (click)="toggleNotifications()">
+        {{ notifications ? 'Turn Off' : 'Turn On' }}
+      </button>
+    </div>
+
+    <div class="setting-row">
+      <div>
+        <h3>Dark Mode</h3>
+        <p>{{ darkMode ? 'Enabled' : 'Disabled' }}</p>
+      </div>
+      <button (click)="toggleDarkMode()">
+        {{ darkMode ? 'Light Mode' : 'Dark Mode' }}
+      </button>
+    </div>
+
+    <div class="setting-row">
+      <div>
+        <h3>Language</h3>
+        <p>{{ language }}</p>
+      </div>
+      <select [(ngModel)]="language">
+        <option>English</option>
+        <option>Hindi</option>
+      </select>
+    </div>
+
+  </div>
+</div>
+
+<div class="setting-row">
+ 

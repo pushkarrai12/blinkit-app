@@ -1,0 +1,92 @@
+.success-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8ffe8, #fff6cf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.success-card {
+  background: white;
+  width: 100%;
+  max-width: 520px;
+  padding: 40px;
+  text-align: center;
+  border-radius: 28px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  animation: popUp 0.6s ease;
+}
+
+.checkmark {
+  width: 90px;
+  height: 90px;
+  background: #0aad0a;
+  color: white;
+  border-radius: 50%;
+  font-size: 56px;
+  font-weight: 900;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 0.8s ease;
+}
+
+.success-card h1 {
+  margin: 10px 0;
+  color: #111;
+}
+
+.success-card p {
+  color: #555;
+}
+
+.order-box {
+  margin: 25px 0;
+  background: #f7f8fa;
+  padding: 18px;
+  border-radius: 18px;
+  text-align: left;
+}
+
+.order-box h3 {
+  margin-top: 0;
+}
+
+.success-card button {
+  border: none;
+  background: #0aad0a;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.4);
+  }
+
+  60% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,131 @@
+.search-page {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.search-top {
+  background: white;
+  padding: 25px;
+  border-radius: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 34px;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+
+    &:focus {
+      border-color: #0aad0a;
+      box-shadow: 0 0 0 4px rgba(10, 173, 10, 0.1);
+    }
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.product-card {
+  background: white;
+  padding: 18px;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  h3 {
+    margin: 14px 0 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  p {
+    color: #666;
+    margin: 0 0 10px;
+  }
+
+  .price {
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 14px;
+    color: #0aad0a;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #0aad0a;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #089108;
+    }
+  }
+}
+
+.empty-box {
+  background: white;
+  padding: 50px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+
+  .search-page {
+    padding: 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-top h1 {
+    font-size: 28px;
+  }
+}

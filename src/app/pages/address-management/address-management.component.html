@@ -1,0 +1,51 @@
+<div class="address-page">
+
+  <div class="address-header">
+    <h1>Manage Addresses 📍</h1>
+    <p>Add, edit and manage your delivery addresses.</p>
+  </div>
+
+  <div class="address-grid">
+
+    <div class="address-form">
+      <h2>Add New Address</h2>
+
+      <input type="text" placeholder="Full Name" [(ngModel)]="address.name">
+
+      <input type="text" placeholder="Mobile Number" [(ngModel)]="address.mobile">
+
+      <input type="text" placeholder="City" [(ngModel)]="address.city">
+
+      <textarea rows="4" placeholder="Full Address" [(ngModel)]="address.fullAddress"></textarea>
+
+      <select [(ngModel)]="address.type">
+        <option>Home</option>
+        <option>Office</option>
+        <option>Other</option>
+      </select>
+
+      <button (click)="addAddress()">Add Address</button>
+    </div>
+
+    <div class="address-list">
+      <h2>Saved Addresses</h2>
+
+      <div class="empty" *ngIf="addresses.length === 0">
+        No address added yet.
+      </div>
+
+      <div class="address-card" *ngFor="let item of addresses; let i = index">
+        <div class="badge">{{ item.type }}</div>
+
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.mobile }}</p>
+        <p>{{ item.city }}</p>
+        <p>{{ item.fullAddress }}</p>
+
+        <button (click)="deleteAddress(i)">Delete</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="referral-page">
+
+  <div class="referral-card">
+
+    <h1>Invite Friends 🎁</h1>
+    <p>Invite your friends and earn rewards.</p>
+
+    <div class="code-box">
+      <span>{{ referralCode }}</span>
+      <button (click)="copyCode()">
+        {{ copied ? 'Copied!' : 'Copy Code' }}
+      </button>
+    </div>
+
+    <div class="reward-box">
+      <h2>Earn ₹50</h2>
+      <p>When your friend joins using your referral code.</p>
+    </div>
+
+    <h2>Referral History</h2>
+
+    <div class="friend-item" *ngFor="let friend of friends">
+      <div>
+        <h3>{{ friend.name }}</h3>
+        <p>{{ friend.status }}</p>
+      </div>
+
+      <strong>₹{{ friend.reward }}</strong>
+    </div>
+
+  </div>
+
+</div>

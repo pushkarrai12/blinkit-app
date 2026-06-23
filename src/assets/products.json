@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Amul Milk",
+    "price": 30,
+    "category": "Dairy",
+    "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b"
+  },
+  {
+    "id": 2,
+    "name": "Fresh Banana",
+    "price": 50,
+    "category": "Fruits",
+    "image": "https://images.unsplash.com/photo-1528825871115-3581a5387919"
+  },
+  {
+    "id": 3,
+    "name": "Brown Bread",
+    "price": 40,
+    "category": "Bakery",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff"
+  },
+  {
+    "id": 4,
+    "name": "Cold Drink",
+    "price": 45,
+    "category": "Drinks",
+    "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97"
+  }
+]

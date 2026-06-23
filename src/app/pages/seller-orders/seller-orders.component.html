@@ -1,0 +1,50 @@
+<div class="seller-orders-page">
+
+  <div class="seller-header">
+    <h1>Seller Orders 🧾</h1>
+    <p>Manage product orders received from customers.</p>
+  </div>
+
+  <div class="orders-table">
+
+    <div class="table-head">
+      <span>Order ID</span>
+      <span>Customer</span>
+      <span>Product</span>
+      <span>Qty</span>
+      <span>Amount</span>
+      <span>Status</span>
+      <span>Action</span>
+    </div>
+
+    <div class="table-row" *ngFor="let order of orders">
+
+      <span>#{{ order.id }}</span>
+      <span>{{ order.customer }}</span>
+      <span>{{ order.product }}</span>
+      <span>{{ order.qty }}</span>
+      <span>₹{{ order.amount }}</span>
+
+      <span
+        class="status"
+        [class.packed]="order.status === 'Packed'"
+        [class.delivered]="order.status === 'Delivered'"
+      >
+        {{ order.status }}
+      </span>
+
+      <span class="actions">
+        <button (click)="updateStatus(order, 'Packed')">
+          Packed
+        </button>
+
+        <button (click)="updateStatus(order, 'Delivered')">
+          Delivered
+        </button>
+      </span>
+
+    </div>
+
+  </div>
+
+</div>

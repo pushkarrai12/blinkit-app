@@ -1,0 +1,65 @@
+<div class="details-page">
+
+  <div class="details-card">
+
+    <div class="product-image">
+      <img [src]="product.image">
+    </div>
+
+    <div class="product-info">
+
+      <div class="rating">
+        ⭐ {{ product.rating }}
+      </div>
+
+      <h1>{{ product.name }}</h1>
+
+      <div class="price">
+        ₹{{ product.price }}
+      </div>
+
+      <p class="desc">
+        {{ product.description }}
+      </p>
+
+      <div class="qty-box">
+
+        <button (click)="decreaseQty()">
+          -
+        </button>
+
+        <span>{{ qty }}</span>
+
+        <button (click)="increaseQty()">
+          +
+        </button>
+
+      </div>
+
+      <div class="action-buttons">
+
+       <button class="cart-btn" (click)="addToCart()">
+  Add To Cart
+</button>
+
+        <button class="buy-btn" routerLink="/checkout">
+  Buy Now
+</button>
+
+      </div>
+
+      <div class="delivery-info">
+
+        <p>🚚 Delivery in 10 minutes</p>
+
+        <p>✅ Fresh & Organic Product</p>
+
+        <p>🔄 Easy Return Available</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

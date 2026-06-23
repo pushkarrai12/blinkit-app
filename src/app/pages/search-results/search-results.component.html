@@ -1,0 +1,63 @@
+<div class="search-page">
+
+  <div class="search-top">
+
+    <h1>Search Products 🔍</h1>
+
+    <input
+      type="text"
+      placeholder="Search products..."
+      [(ngModel)]="searchText"
+    >
+
+    <select [(ngModel)]="selectedCategory">
+
+      <option>All</option>
+      <option>Fruits</option>
+      <option>Dairy</option>
+      <option>Bakery</option>
+      <option>Snacks</option>
+
+    </select>
+
+  </div>
+
+  <div
+    class="products-grid"
+    *ngIf="filteredProducts.length > 0"
+  >
+
+    <div
+      class="product-card"
+      *ngFor="let product of filteredProducts"
+      routerLink="/product-details"
+    >
+
+      <img [src]="product.image">
+
+      <h3>{{ product.name }}</h3>
+
+      <p>{{ product.category }}</p>
+
+      <div class="price">
+        ₹{{ product.price }}
+      </div>
+
+      <button
+        (click)="addToCart(product); $event.stopPropagation()"
+      >
+        Add To Cart
+      </button>
+
+    </div>
+
+  </div>
+
+  <div
+    class="empty-box"
+    *ngIf="filteredProducts.length === 0"
+  >
+    No Products Found 😔
+  </div>
+
+</div>

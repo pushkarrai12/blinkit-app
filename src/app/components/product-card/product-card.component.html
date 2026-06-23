@@ -1,0 +1,53 @@
+<section class="product-page">
+
+  <h2>Fresh Products</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card" *ngFor="let product of products">
+
+      <span class="discount">
+        {{ product.discount }}% OFF
+      </span>
+
+      <img
+        [src]="product.image"
+        [alt]="product.name"
+      >
+
+      <h3>{{ product.name }}</h3>
+
+      <p>{{ product.weight }}</p>
+
+      <div class="price-row">
+
+        <div class="price-box">
+          <b>₹{{ product.price }}</b>
+          <del>₹{{ product.oldPrice }}</del>
+        </div>
+
+      </div>
+
+      <div class="btn-row">
+
+        <button
+          class="add-btn"
+          (click)="addToCart(product)"
+        >
+          Add To Cart
+        </button>
+
+        <button
+          class="view-btn"
+          [routerLink]="['/product-details', product.id]"
+        >
+          View Details
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

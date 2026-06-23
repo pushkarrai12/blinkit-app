@@ -1,0 +1,19 @@
+<div class="success-page">
+  <div class="success-card">
+    <div class="checkmark">✓</div>
+
+    <h1>Order Placed Successfully!</h1>
+    <p>Your groceries will be delivered soon.</p>
+
+    <div class="order-box" *ngIf="order">
+      <h3>Order Details</h3>
+      <p><b>Name:</b> {{ order.customerName }}</p>
+      <p><b>Mobile:</b> {{ order.mobile }}</p>
+      <p><b>Address:</b> {{ order.address }}</p>
+      <p><b>Total:</b> ₹{{ order.total }}</p>
+    </div>
+<button routerLink="/delivery-tracking">
+  Track Order
+</button>
+  </div>
+</div>

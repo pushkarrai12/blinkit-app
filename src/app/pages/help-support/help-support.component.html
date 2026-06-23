@@ -1,0 +1,51 @@
+<div class="help-page">
+
+  <div class="help-hero">
+    <h1>Help & Support ❓</h1>
+    <p>Need help? We are here for you.</p>
+  </div>
+
+  <div class="help-grid">
+
+    <div class="faq-box">
+      <h2>FAQs</h2>
+
+      <div class="faq-item">
+        <h3>How fast is delivery?</h3>
+        <p>Most orders are delivered within 10 minutes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I cancel my order?</h3>
+        <p>Yes, before the order is out for delivery.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I track order?</h3>
+        <p>Go to Orders page and click Track Order.</p>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h2>Contact Support</h2>
+
+      <input
+        type="text"
+        placeholder="Your Name"
+        [(ngModel)]="name"
+      >
+
+      <textarea
+        rows="5"
+        placeholder="Write your issue"
+        [(ngModel)]="message"
+      ></textarea>
+
+      <button (click)="sendMessage()">
+        Submit
+      </button>
+    </div>
+
+  </div>
+
+</div>

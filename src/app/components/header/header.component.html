@@ -1,0 +1,60 @@
+<header class="header">
+
+  <div class="logo">
+    Blinkit
+  </div>
+
+  <!-- Delivery Location -->
+  <button class="delivery-info" (click)="openLocationPopup()">
+    <h3>Delivery in <span>24 mins</span></h3>
+    <p>Motihari ▼</p>
+  </button>
+  
+
+  <nav class="nav-menu">
+    <a routerLink="/">Home</a>
+    <a routerLink="/categories">Categories</a>
+    <a routerLink="/offers">Offers</a>
+    <a routerLink="/orders">Orders</a>
+    <a routerLink="/contact">Contact</a>
+  </nav>
+
+  <div class="header-actions">
+    <a routerLink="/search-results">🔍 Search</a>
+    <a routerLink="/wishlist">❤️ Wishlist</a>
+    <a routerLink="/cart">🛒 Cart</a>
+    <a routerLink="/profile">👤 Profile</a>
+    <a routerLink="/admin">⚙️ Admin</a>
+  </div>
+
+</header>
+
+<!-- Location Popup -->
+<div class="popup-overlay" *ngIf="showLocationPopup">
+  <div class="location-popup">
+
+    <button class="close-btn" (click)="closeLocationPopup()">
+      ✖
+    </button>
+
+    <h2>Welcome to QuickMart</h2>
+    <p>Please select the location closest to you</p>
+
+    <div class="location-option">
+      <h3>Motihari</h3>
+      <p>Order Now</p>
+    </div>
+
+    <div class="or">OR</div>
+
+    <button class="detect-btn">
+      Detect My Location
+    </button>
+
+    <p class="login-text">
+      Existing User?
+      <a routerLink="/login">Login Now</a>
+    </p>
+
+  </div>
+</div>

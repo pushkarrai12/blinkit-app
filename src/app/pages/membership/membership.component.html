@@ -1,0 +1,49 @@
+<div class="membership-page">
+
+  <div class="membership-header">
+
+    <h1>Prime Membership ⭐</h1>
+
+    <p>
+      Get free delivery, cashback and exclusive offers.
+    </p>
+
+  </div>
+
+  <div class="plans-grid">
+
+    <div
+      class="plan-card"
+      *ngFor="let plan of plans"
+    >
+
+      <h2>{{ plan.name }}</h2>
+
+      <div class="price">
+        ₹{{ plan.price }}
+      </div>
+
+      <p class="duration">
+        {{ plan.duration }}
+      </p>
+
+      <div class="benefits">
+
+        <div
+          class="benefit"
+          *ngFor="let item of plan.benefits"
+        >
+          ✅ {{ item }}
+        </div>
+
+      </div>
+
+      <button (click)="subscribe(plan)">
+        Subscribe Now
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

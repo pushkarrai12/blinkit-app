@@ -1,0 +1,41 @@
+<div class="inventory-page">
+
+  <div class="inventory-header">
+    <h1>Inventory Management 📦</h1>
+    <p>Manage product stock and availability.</p>
+  </div>
+
+  <div class="inventory-table">
+
+    <div class="table-head">
+      <span>Product</span>
+      <span>Category</span>
+      <span>Price</span>
+      <span>Stock</span>
+      <span>Status</span>
+      <span>Action</span>
+    </div>
+
+    <div class="table-row" *ngFor="let item of items">
+      <span>{{ item.name }}</span>
+      <span>{{ item.category }}</span>
+      <span>₹{{ item.price }}</span>
+      <span>{{ item.stock }}</span>
+
+      <span
+        class="status"
+        [class.low]="item.status === 'Low Stock'"
+        [class.out]="item.status === 'Out of Stock'"
+      >
+        {{ item.status }}
+      </span>
+
+      <span class="actions">
+        <button (click)="decreaseStock(item)">-</button>
+        <button (click)="increaseStock(item)">+</button>
+      </span>
+    </div>
+
+  </div>
+
+</div>
